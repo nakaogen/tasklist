@@ -1,5 +1,4 @@
 class TasksController < ApplicationController
-    
   def index
     @tasks = Task.all
   end
@@ -11,7 +10,6 @@ class TasksController < ApplicationController
   def new
     @task = Task.new
   end
-
 
   def edit
     @task = Task.find(params[:id])
@@ -50,6 +48,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-  params.require(:task).permit(:content)
+  params.require(:task).permit(:content,:status)
   end
 end
